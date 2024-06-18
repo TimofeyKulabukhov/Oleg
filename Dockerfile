@@ -1,6 +1,8 @@
 FROM python:3.12-alpine
-RUN pip install flask-login
-RUN pip install flask-SQLAlchemy
-COPY . /opt/app
+RUN pip3 install flask
+RUN pip3 install flask-login
+RUN pip3 install flask-SQLAlchemy
+RUN pip3 install werkzeug
 WORKDIR /opt/app
-CMD [ "python", "app.py" ]
+COPY . /opt/app
+CMD [ "python", "./app.py" ]
